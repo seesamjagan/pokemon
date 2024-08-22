@@ -20,13 +20,11 @@ export function Pokes() {
   return (
     <div className={styles.pokes}>
         <nav className={styles.nav}>
-            {/** disabled={!back || status === 'loading'} */}
-            <Button variant='link-text' onClick={() => dispatch(getNextPage())}>
+            <Button disabled={!back || status === 'loading'} variant='outline' onClick={() => dispatch(getNextPage())}>
                 back
             </Button>
             <span>{count}</span>
-            {/** disabled={!next || status === 'loading'} */}
-            <Button variant='link-text' onClick={() => dispatch(getNextPage())}>
+            <Button disabled={!next || status === 'loading'} variant='outline' onClick={() => dispatch(getNextPage())}>
                 next
             </Button>
         </nav>

@@ -7,6 +7,7 @@ import './Button.scss';
 type ButtonProps = Props<HTMLButtonElement> & {
     variant?: Variant;
     color?: Color;
+    disabled?: boolean;
 }
 
 export default function Button(props: ButtonProps) {
