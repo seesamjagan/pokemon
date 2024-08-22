@@ -1,8 +1,8 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React from 'react';
 
-import './Button.scss';
 import { Color, Props, Variant } from '@/types/index';
 import { classNames } from '@dex/utilities';
+import './Button.scss';
 
 type ButtonProps = Props<HTMLButtonElement> & {
     variant?: Variant;
