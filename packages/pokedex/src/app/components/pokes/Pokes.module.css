@@ -1,0 +1,14 @@
+.pokes {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.pokes .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+.pokes pre {
+    flex-grow: 1;
+    overflow: auto;
+}
