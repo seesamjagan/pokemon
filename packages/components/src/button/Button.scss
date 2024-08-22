@@ -48,6 +48,9 @@ $dark-color: #212121;
         position: relative;
         box-sizing: border-box;
         margin: 0;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        min-width: 5rem;
 
         &:hover:not(:disabled) {
             cursor: pointer;

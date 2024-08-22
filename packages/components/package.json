@@ -10,7 +10,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "rollup -c && tsc-alias -p tsconfig.json"
+    "build": "rollup -c && tsc-alias -p tsconfig.json",
+    "dev": "rollup -c --watch"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",

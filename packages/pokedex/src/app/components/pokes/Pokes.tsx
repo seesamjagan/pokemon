@@ -4,6 +4,8 @@ import styles from './Pokes.module.css';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { getNextPage, getPokes, selectCount, selectError, selectNextURL, selectPokes, selectPreviousURL, selectStatus } from '@/lib/features/pokes/pokesSlice';
 import { Button } from '@dex/components';
+import { classNames } from '@dex/utilities';
+import Link from "next/link";
 
 export function Pokes() {
     const dispatch = useAppDispatch();
@@ -14,23 +16,32 @@ export function Pokes() {
     const count = useAppSelector(selectCount);
     const error = useAppSelector(selectError);
 
+    // Side Effects
     useEffect(() => {
-        dispatch(getPokes('https://pokeapi.co/api/v2/pokemon'));
-    }, [dispatch]);
+        if (!count) {
+            dispatch(getPokes('https://pokeapi.co/api/v2/pokemon'));
+        }
+    }, [dispatch, count]);
+
+    const isLoading =  status === 'loading';
+
+    // UI
   return (
-    <div className={styles.pokes}>
+    <div className={classNames(styles.pokes)}>
         <nav className={styles.nav}>
-            <Button disabled={!back || status === 'loading'} variant='outline' onClick={() => dispatch(getNextPage())}>
+            <Button disabled={!back || isLoading} variant='outline' onClick={() => dispatch(getNextPage())}>
                 back
             </Button>
             <span>{count}</span>
-            <Button disabled={!next || status === 'loading'} variant='outline' onClick={() => dispatch(getNextPage())}>
+            <Button disabled={!next || isLoading} variant='outline' onClick={() => dispatch(getNextPage())}>
                 next
             </Button>
         </nav>
-        <pre>
-            {pokes && JSON.stringify(pokes, null, 2)}
-        </pre>
+        <main className={classNames(styles.main)}>
+            {pokes?.map(poke => <Link href={`/pokemon/${poke.name}`} key={poke.name}>
+                {JSON.stringify(poke, null, 2)}
+            </Link>)}
+        </main>
         <footer>
             {status !== 'idle' && <span>{status}</span>}
             {typeof error === 'string' && <span>{error}</span>}

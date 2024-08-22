@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@dex/components": "workspace:^1",
+    "@dex/utilities": "workspace:^1",
     "@reduxjs/toolkit": "^2.2.0",
     "next": "latest",
     "react": "^18.2.0",
