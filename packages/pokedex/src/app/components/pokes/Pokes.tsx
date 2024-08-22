@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import styles from './Pokes.module.css';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { getNextPage, getPokes, selectCount, selectError, selectNextURL, selectPokes, selectPreviousURL, selectStatus } from '@/lib/features/pokes/pokesSlice';
+import { Button } from '@dex/components';
 
 export function Pokes() {
     const dispatch = useAppDispatch();
@@ -19,13 +20,15 @@ export function Pokes() {
   return (
     <div className={styles.pokes}>
         <nav className={styles.nav}>
-            <button disabled={!back || status === 'loading'} onClick={() => dispatch(getNextPage())}>
+            {/** disabled={!back || status === 'loading'} */}
+            <Button variant='link-text' onClick={() => dispatch(getNextPage())}>
                 back
-            </button>
+            </Button>
             <span>{count}</span>
-            <button disabled={!next || status === 'loading'} onClick={() => dispatch(getNextPage())}>
+            {/** disabled={!next || status === 'loading'} */}
+            <Button variant='link-text' onClick={() => dispatch(getNextPage())}>
                 next
-            </button>
+            </Button>
         </nav>
         <pre>
             {pokes && JSON.stringify(pokes, null, 2)}

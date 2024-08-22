@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { StoreProvider } from "./StoreProvider";
 import { Nav } from "./components/Nav";
-
+import "@dex/components/dist/styles/styles.css"
 import "./styles/globals.css";
 import styles from "./styles/layout.module.css";
 

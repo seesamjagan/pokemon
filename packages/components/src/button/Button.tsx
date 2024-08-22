@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color, Props, Variant } from '@/types/index';
+import type { Color, Props, Variant } from '@/types/index';
 import { classNames } from '@dex/utilities';
 import './Button.scss';
 
@@ -10,8 +10,8 @@ type ButtonProps = Props<HTMLButtonElement> & {
 }
 
 export default function Button(props: ButtonProps) {
-    const { className, variant = 'solid', color = 'info' } = props;
+    const { className, variant = 'solid', color = 'info', ...rest } = props;
   return (
-    <button {...props} className={classNames('dex-button', className, `dex-button-${variant}-${color}`)} />
+    <button {...rest} className={classNames('dex-button', className, `dex-${variant}`, `dex-${color}`)} />
   )
 }
