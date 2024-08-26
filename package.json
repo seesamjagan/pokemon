@@ -4,9 +4,32 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "lerna": "^8.1.8"
+    "@nx/js": "19.6.2",
+    "@nx/storybook": "19.6.2",
+    "@nx/vite": "19.6.2",
+    "@nx/web": "19.6.2",
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/addon-interactions": "^8.2.8",
+    "@storybook/core-server": "^8.2.8",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/react-vite": "^8.2.8",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "lerna": "^8.1.8",
+    "prettier": "^2.6.2",
+    "storybook": "^8.2.8",
+    "ts-node": "10.9.1",
+    "tslib": "^2.3.0",
+    "typescript": "~5.5.2",
+    "vite": "^5.0.0"
   },
   "scripts": {
     "lerna": "lerna",
