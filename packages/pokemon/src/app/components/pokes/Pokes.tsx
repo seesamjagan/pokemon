@@ -70,6 +70,7 @@ export function Pokes() {
         <div className={classNames(styles.pokes)}>
             <main className={classNames(styles.main)}>
                 <DataGrid
+                    className={styles['data-grid']}
                     rows={pokes}
                     columns={columns}
                     getRowId={info => info.name}
