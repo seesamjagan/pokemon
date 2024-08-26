@@ -12,5 +12,8 @@
     "lerna": "lerna",
     "build": "lerna run build",
     "start": "lerna watch -- yarn build --since"
+  },
+  "resolutions": {
+    "@types/react": "18.3.4"
   }
 }
