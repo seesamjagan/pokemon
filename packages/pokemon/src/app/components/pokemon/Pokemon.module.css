@@ -1,0 +1,9 @@
+.pokemon {
+    position: relative;
+}
+
+.avatars {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}

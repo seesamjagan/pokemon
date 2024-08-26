@@ -1,10 +1,11 @@
-import React from 'react'
+import { Pokemon } from '@/app/components/pokemon/Pokemon'
 
 export default function PokeMonPage({params}: {params: {name: string}}) {
+
   return (
     <div>
-       <h1> PokeMon: {params.name}</h1>
-       TODO
+       <h1> Name: {params.name}</h1>
+       <Pokemon name={params.name} />
     </div>
   )
 }
