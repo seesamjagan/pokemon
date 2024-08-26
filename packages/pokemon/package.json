@@ -11,6 +11,10 @@
   "dependencies": {
     "@dex/components": "^1.0.0",
     "@dex/utilities": "^1.0.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.7",
+    "@mui/x-data-grid": "^7.14.0",
     "@reduxjs/toolkit": "^2.2.0",
     "next": "latest",
     "react": "^18.2.0",
@@ -19,8 +23,8 @@
   },
   "devDependencies": {
     "@types/node": "20.2.5",
-    "@types/react": "18.2.37",
-    "@types/react-dom": "^18.2.18",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "typescript": "^5.3.3"

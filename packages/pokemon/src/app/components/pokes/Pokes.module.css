@@ -15,3 +15,14 @@
     gap: 0.5rem;
     overflow: auto;
 }
+.cell-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.cell-link:hover::after {
+    content: '🔗';
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+    text-decoration: none;
+}

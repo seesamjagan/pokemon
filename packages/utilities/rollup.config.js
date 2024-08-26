@@ -1,7 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve'; // Resolves node modules
 import commonjs from '@rollup/plugin-commonjs'; // Converts CommonJS modules to ES6
 import typescript from '@rollup/plugin-typescript'; // TypeScript support
-import { terser } from 'rollup-plugin-terser'; // Minifies the output
+import terser from '@rollup/plugin-terser'; // Minifies the output
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'; // Excludes peer dependencies from bundle
 
 export default {
