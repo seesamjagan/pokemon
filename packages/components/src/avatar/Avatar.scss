@@ -1,0 +1,13 @@
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    box-shadow: 0 0 4px 2px #366999;
+}
