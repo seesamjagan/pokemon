@@ -1,10 +1,10 @@
-import resolve from '@rollup/plugin-node-resolve'; // Resolves node modules
+import { babel } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs'; // Converts CommonJS modules to ES6
-import typescript from '@rollup/plugin-typescript'; // TypeScript support
+import resolve from '@rollup/plugin-node-resolve'; // Resolves node modules
 import terser from '@rollup/plugin-terser'; // Minifies the output
-import postcss from 'rollup-plugin-scss'; // For processing CSS files
+import typescript from '@rollup/plugin-typescript'; // TypeScript support
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'; // Excludes peer dependencies from bundle
-
+import postcss from 'rollup-plugin-scss'; // For processing CSS files
 import extractCss from './rollup-plugin-extract-css.js'; // Custom plugin for extracting CSS
 
 const outputDir = 'dist';
@@ -28,6 +28,14 @@ export default {
     resolve(), // Resolves node modules
     commonjs(), // Converts CommonJS to ES6
     typescript({ tsconfig: './tsconfig.json' }), // TypeScript support
+    babel({
+      babelHelpers: 'bundled',
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      presets: [
+        '@babel/preset-react',
+        '@babel/preset-typescript',
+      ],
+    }),
     postcss({ // CSS processing
         minimize: true, // Minify CSS
         fileName: 'styles/styles.css',
