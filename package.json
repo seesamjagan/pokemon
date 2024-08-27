@@ -34,6 +34,11 @@
   "scripts": {
     "lerna": "lerna",
     "build": "lerna run build",
-    "start": "lerna watch -- yarn build --since"
+    "start": "lerna watch -- npm run build --since",
+    "storybook": "lerna run storybook",
+    "dev": "lerna run dev",
+    "dev:pokemon": "npm run dev -w @dex/pokemon",
+    "dev:utilities": "npm run dev -w @dex/utilities",
+    "dev:components": "npm run dev -w @dex/components"
   }
 }
